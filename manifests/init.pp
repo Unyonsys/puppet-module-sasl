@@ -12,14 +12,14 @@ class sasl (
 
   file { '/etc/default/saslauthd':
     ensure  => file,
-    mode    => 0600,
+    mode    => '0600',
     content => template('sasl/saslauthd.erb'),
     notify  => Service['saslauthd']
   }
 
   file { '/etc/saslauthd.conf':
     ensure  => file,
-    mode    => 0600,
+    mode    => '0600',
     content => template('sasl/saslauthd.conf.erb'),
     notify  => Service['saslauthd']
   }
